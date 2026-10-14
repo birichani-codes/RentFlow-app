@@ -6,8 +6,25 @@ import './style.css';
 const money=n=>'KES '+Number(n||0).toLocaleString('en-KE');
 const iconMap={Dashboard:LayoutDashboard,Properties:Building2,Tenants:Users,Invoices:FileText,Payments:Wallet,Receipts:Receipt,Reports:ChartNoAxesCombined,Settings:Settings};
 const nav=['Dashboard','Properties','Tenants','Invoices','Payments','Receipts','Reports','Settings'];
-const api=async(url,options)=>{const r=await fetch('/api'+url,{headers:{'Content-Type':'application/json'},...options});const d=await r.json();if(!r.ok)throw Error(d.error||'Request failed');return d};
-function App(){const[page,setPage]=useState('Dashboard'),[state,setState]=useState(null),[error,setError]=useState(''),[modal,setModal]=useState(''),[selected,setSelected]=useState(null),[mobile,setMobile]=useState(false),[search,setSearch]=useState(''),[toast,setToast]=useState(''),[printStage,setPrintStage]=useState('idle'),[form,setForm]=useState({}),[busy,setBusy]=useState(false);
+const API_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+
+const api = async (url, options = {}) => {
+  const r = await fetch(`${API_URL}/api${url}`, {
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers
+    }
+  });
+
+  const d = await r.json();
+
+  if (!r.ok) {
+    throw new Error(d.error || 'Request failed');
+  }
+
+  return d;
+};function App(){const[page,setPage]=useState('Dashboard'),[state,setState]=useState(null),[error,setError]=useState(''),[modal,setModal]=useState(''),[selected,setSelected]=useState(null),[mobile,setMobile]=useState(false),[search,setSearch]=useState(''),[toast,setToast]=useState(''),[printStage,setPrintStage]=useState('idle'),[form,setForm]=useState({}),[busy,setBusy]=useState(false);
 const load=async()=>{try{setState(await api('/state'));setError('')}catch(e){setError(e.message)}};useEffect(()=>{load()},[]);useEffect(()=>{if(!toast)return;const t=setTimeout(()=>setToast(''),3200);return()=>clearTimeout(t)},[toast]);
 const tenantById=id=>state?.tenants.find(t=>t.id===id),propById=id=>state?.properties.find(p=>p.id===id);const invById=id=>state?.invoices.find(i=>i.id===id);
 const getStatus=i=>i.paid>=i.amount?'Paid':i.paid>0?'Partial':new Date(i.due+'T23:59:59')<new Date()?'Overdue':'Pending';
