@@ -1,0 +1,168 @@
+{
+  "properties": [
+    {
+      "id": "p1",
+      "name": "Greenview Residences",
+      "location": "Juja, Kiambu",
+      "type": "Apartments",
+      "units": 24
+    },
+    {
+      "id": "p2",
+      "name": "Acacia Heights",
+      "location": "Westlands, Nairobi",
+      "type": "Apartments",
+      "units": 18
+    },
+    {
+      "id": "p3",
+      "name": "Palm Court Villas",
+      "location": "Ruiru, Kiambu",
+      "type": "Townhouses",
+      "units": 12
+    }
+  ],
+  "tenants": [
+    {
+      "id": "t1",
+      "name": "Grace Wanjiku",
+      "unit": "A-101",
+      "propertyId": "p1",
+      "phone": "0712 345 678",
+      "rent": 25000,
+      "email": "grace@example.com"
+    },
+    {
+      "id": "t2",
+      "name": "Brian Otieno",
+      "unit": "A-102",
+      "propertyId": "p1",
+      "phone": "0723 456 789",
+      "rent": 18500,
+      "email": "brian@example.com"
+    },
+    {
+      "id": "t3",
+      "name": "Faith Njeri",
+      "unit": "B-203",
+      "propertyId": "p2",
+      "phone": "0734 567 890",
+      "rent": 32000,
+      "email": "faith@example.com"
+    },
+    {
+      "id": "t4",
+      "name": "Kevin Mwangi",
+      "unit": "C-04",
+      "propertyId": "p3",
+      "phone": "0745 678 901",
+      "rent": 42000,
+      "email": "kevin@example.com"
+    },
+    {
+      "id": "t5",
+      "name": "Amina Hassan",
+      "unit": "A-108",
+      "propertyId": "p1",
+      "phone": "0756 789 012",
+      "rent": 22000,
+      "email": "amina@example.com"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "RF-2026-1001",
+      "tenantId": "t1",
+      "month": "October 2026",
+      "amount": 25000,
+      "paid": 25000,
+      "due": "2026-10-05"
+    },
+    {
+      "id": "RF-2026-1002",
+      "tenantId": "t2",
+      "month": "October 2026",
+      "amount": 18500,
+      "paid": 10000,
+      "due": "2026-10-05"
+    },
+    {
+      "id": "RF-2026-1003",
+      "tenantId": "t3",
+      "month": "October 2026",
+      "amount": 32000,
+      "paid": 32000,
+      "due": "2026-10-05"
+    },
+    {
+      "id": "RF-2026-1004",
+      "tenantId": "t4",
+      "month": "October 2026",
+      "amount": 42000,
+      "paid": 0,
+      "due": "2026-10-05"
+    },
+    {
+      "id": "RF-2026-1005",
+      "tenantId": "t5",
+      "month": "October 2026",
+      "amount": 22000,
+      "paid": 22000,
+      "due": "2026-10-05"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay1",
+      "invoiceId": "RF-2026-1001",
+      "amount": 25000,
+      "date": "2026-10-03T11:42:00.000Z",
+      "method": "M-Pesa",
+      "reference": "DEMO-SJ48CX"
+    },
+    {
+      "id": "pay2",
+      "invoiceId": "RF-2026-1002",
+      "amount": 10000,
+      "date": "2026-10-04T09:20:00.000Z",
+      "method": "M-Pesa",
+      "reference": "DEMO-KV72PA"
+    },
+    {
+      "id": "pay3",
+      "invoiceId": "RF-2026-1003",
+      "amount": 32000,
+      "date": "2026-10-02T10:18:00.000Z",
+      "method": "Bank transfer",
+      "reference": "DEMO-BN92LK"
+    },
+    {
+      "id": "pay4",
+      "invoiceId": "RF-2026-1005",
+      "amount": 22000,
+      "date": "2026-10-05T13:47:00.000Z",
+      "method": "M-Pesa",
+      "reference": "DEMO-QM19TY"
+    }
+  ],
+  "activities": [
+    {
+      "id": "a1",
+      "message": "Grace Wanjiku paid October rent",
+      "time": "Today, 11:42 AM",
+      "kind": "paid"
+    },
+    {
+      "id": "a2",
+      "message": "Invoice generated for Acacia Heights",
+      "time": "Yesterday, 2:15 PM",
+      "kind": "invoice"
+    },
+    {
+      "id": "a3",
+      "message": "Brian Otieno made a partial payment",
+      "time": "Yesterday, 9:20 AM",
+      "kind": "partial"
+    }
+  ]
+}
