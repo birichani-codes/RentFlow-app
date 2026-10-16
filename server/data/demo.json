@@ -83,7 +83,7 @@
       "tenantId": "t2",
       "month": "October 2026",
       "amount": 18500,
-      "paid": 10000,
+      "paid": 18500,
       "due": "2026-10-05"
     },
     {
@@ -112,6 +112,14 @@
     }
   ],
   "payments": [
+    {
+      "id": "049015be-8f13-4031-9858-002666ad7e4a",
+      "invoiceId": "RF-2026-1002",
+      "amount": 8500,
+      "date": "2026-10-14T09:03:47.830Z",
+      "method": "M-Pesa",
+      "reference": "DEMO-00B80893"
+    },
     {
       "id": "pay1",
       "invoiceId": "RF-2026-1001",
@@ -146,6 +154,12 @@
     }
   ],
   "activities": [
+    {
+      "id": "24e93245-97fd-4682-9390-f717833176c4",
+      "message": "Brian Otieno made a DEMO payment of KES 8,500",
+      "time": "Just now",
+      "kind": "paid"
+    },
     {
       "id": "a1",
       "message": "Grace Wanjiku paid October rent",
